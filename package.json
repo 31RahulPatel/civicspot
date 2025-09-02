@@ -1,0 +1,17 @@
+{
+  "name": "civicspot",
+  "version": "1.0.0",
+  "description": "Smart City Issue Reporting & Community Cleanup Platform",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": ["civic", "reporting", "cleanup", "community", "smart-city"],
+  "author": "CivicSpot Team",
+  "license": "MIT"
+}
