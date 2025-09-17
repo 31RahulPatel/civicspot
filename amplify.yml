@@ -6,7 +6,7 @@ frontend:
         - node --version
         - npm --version
         - cd frontend
-        - npm ci
+        - npm install --production=false
     build:
       commands:
         - cd frontend
