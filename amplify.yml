@@ -3,41 +3,14 @@ frontend:
   phases:
     preBuild:
       commands:
-        - node --version
-        - npm --version
-        - cd frontend
-        - npm install --production=false
+        - npm install
     build:
       commands:
-        - cd frontend
         - npm run build
   artifacts:
-    baseDirectory: frontend/dist
+    baseDirectory: dist
     files:
       - '**/*'
   cache:
     paths:
-      - frontend/node_modules/**/*
-      - frontend/.npm/**/*
-  customHeaders:
-    - pattern: '**/*'
-      headers:
-        - key: 'Strict-Transport-Security'
-          value: 'max-age=31536000; includeSubDomains'
-        - key: 'X-Content-Type-Options'
-          value: 'nosniff'
-        - key: 'X-Frame-Options'
-          value: 'DENY'
-        - key: 'X-XSS-Protection'
-          value: '1; mode=block'
-        - key: 'Cache-Control'
-          value: 'public, max-age=31536000, immutable'
-    - pattern: '/index.html'
-      headers:
-        - key: 'Cache-Control'
-          value: 'no-cache, no-store, must-revalidate'
-  env:
-    variables:
-      NODE_ENV: production
-      CI: true
-      GENERATE_SOURCEMAP: false
+      - node_modules/**/*
