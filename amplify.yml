@@ -4,9 +4,10 @@ frontend:
     preBuild:
       commands:
         - cd frontend
-        - npm install
+        - npm ci
     build:
       commands:
+        - cd frontend
         - npm run build
   artifacts:
     baseDirectory: frontend/dist
