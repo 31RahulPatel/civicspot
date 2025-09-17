@@ -4,18 +4,12 @@ frontend:
     preBuild:
       commands:
         - nvm use 18
-        - node --version
-        - npm --version
         - cd frontend
-        - npm ci --verbose
-        - ls -la
+        - npm install
     build:
       commands:
         - cd frontend
-        - echo "Starting build process..."
-        - npm run build --verbose
-        - echo "Build completed, checking output..."
-        - ls -la dist/
+        - npm run build
   artifacts:
     baseDirectory: frontend/dist
     files:
